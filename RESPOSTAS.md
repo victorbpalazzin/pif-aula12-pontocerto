@@ -15,6 +15,11 @@
 
 <!-- Por que, nas duas promoções de um dia, faz sentido usar lambda em vez de função nomeada? -->
 
+As regras são curtas e usadas somente nessas promoções. A lambda permite passar
+a conta diretamente para `calculaPontos`, sem criar um nome para cada promoção
+temporária. O primeiro argumento de `calculaPontos` tem tipo `Int -> Int`:
+é uma função que recebe os pontos base e devolve os pontos finais.
+
 ## Desafio 3
 
 <!-- O que campanhaMultiplicadora 5 devolve? Um número ou outra coisa? Como o :t confirma isso? -->
