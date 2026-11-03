@@ -256,3 +256,8 @@ Durante a atividade, o professor passará pelas duplas e pedirá que **cada inte
 A explicação oral é individual. Os demais critérios valem para a dupla.
 
 Bom trabalho!
+
+## Integrantes da dupla
+
+- Victor Bacelar
+- Luiza Beltrão

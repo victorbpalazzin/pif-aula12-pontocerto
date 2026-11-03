@@ -4,8 +4,8 @@
 
 | Papel | Nome completo | Usuário do GitHub |
 |---|---|---|
-| Integrante 1 (dono do fork) | | |
-| Integrante 2 (colaborador) | | |
+| Integrante 1 (dono do fork) | Victor Bacelar | victorbpalazzin |
+| Integrante 2 (colaborador) | Luiza Beltrão | A confirmar pela integrante |
 
 ## Explicação da solução
 
