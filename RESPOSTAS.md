@@ -11,6 +11,11 @@
 
 <!-- 3 a 5 linhas: como calculaPontos e as fábricas de campanhas eliminam a repetição de código? -->
 
+`calculaPontos` recebe a regra como argumento e a aplica ao valor da compra.
+Assim, o cálculo pode usar campanhas diferentes sem repetir a função inteira.
+As fábricas recebem um fator ou bônus e devolvem uma regra com esse valor.
+Guardamos essas regras em variáveis e usamos `acumula` para aplicá-las em sequência.
+
 ## Desafio 2
 
 <!-- Por que, nas duas promoções de um dia, faz sentido usar lambda em vez de função nomeada? -->
@@ -61,22 +66,56 @@ marcadas como corretas foram preservados.
 
 <!-- Cite duas diferenças entre o calculaPontos em Haskell e o calculaPontos em C. -->
 
+1. Em Haskell, a assinatura usa `(Int -> Int)` para indicar uma função recebida.
+   Em C, declaramos um ponteiro para função com `int (*regra)(int)`.
+   A aplicação fica `regra valor` em Haskell e `regra(valor)` em C.
+2. Em Haskell, podemos passar uma lambda diretamente, como
+   `calculaPontos (\p -> p * 3) 80`. No C usado na atividade não há lambdas:
+   definimos uma função separada e passamos seu ponteiro para `calculaPontos`.
+
 ## Evidência de execução
 
 Saída do `main` de `fidelidade.hs`:
 
 ```text
-(cole aqui)
+--- Desafio 1 ---
+120
+240
+170
+240
+--- Desafio 2 ---
+80
+160
+130
+240
+170
+--- Desafio 3 ---
+750
+350
+100
+55
+--- Desafio 4 ---
+950
+1750
+280
 ```
 
 Saída do `main` de `revisao.hs` (depois de corrigido):
 
 ```text
-(cole aqui)
+40
+100
+400
+200
 ```
 
 Saída de `pontocerto.c`:
 
 ```text
-(cole aqui)
+160
+130
+250
+300
 ```
+
+Execução realizada em 03/11/2026. Haskell: GHC 9.10.3 no Playground, com saída de execução 0 e sem erros. C: GCC local, com -std=c11 -Wall -Wextra -Werror -pedantic, sem avisos. Todos os 24 resultados numéricos correspondem à tabela do README. O GHCi e seu comando :t não foram executados.
