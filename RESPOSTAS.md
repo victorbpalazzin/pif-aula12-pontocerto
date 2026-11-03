@@ -24,6 +24,13 @@ temporária. O primeiro argumento de `calculaPontos` tem tipo `Int -> Int`:
 
 <!-- O que campanhaMultiplicadora 5 devolve? Um número ou outra coisa? Como o :t confirma isso? -->
 
+Devolve uma função que multiplica os pontos por 5, e não um número.
+Ela ainda precisa receber os pontos. No GHCi, `:t campanhaMultiplicadora 5`
+mostraria `campanhaMultiplicadora 5 :: Int -> Int`, confirmando que o resultado
+é uma função. `blackFriday` guarda essa regra e também tem tipo `Int -> Int`.
+Usamos o Playground, que não oferece `:t`; conferimos as assinaturas no código
+e executamos as regras com o compilador GHC.
+
 ## Desafio 4
 
 **a)** <!-- Por que as duas ordens dão resultados diferentes? -->
