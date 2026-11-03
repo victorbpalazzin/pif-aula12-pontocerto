@@ -48,10 +48,14 @@ da compra são multiplicados; os 200 pontos de aniversário entram no final.
 
 | Erro | Função | O que estava errado | Como o GHC avisou (resumo da mensagem) | Como corrigimos |
 |---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
+| 1 | `fimDeSemana` | A lambda usava `=>`. | Erro de sintaxe em `=>` (GHC-58481). | Trocamos por `\p -> p * 4`. |
+| 2 | `aplicaRegraDuasVezes` | A assinatura dizia que `regra` era um `Int`. | `regra` é aplicada a um argumento, mas seu tipo `Int` não aceita argumentos (GHC-83865). | Usamos `(Int -> Int) -> Int -> Int`. |
+| 3 | `natal` | A fábrica estava sem o valor do bônus. | Esperava `Int -> Int`, mas recebeu `Int -> Int -> Int`; faltavam argumentos (GHC-83865). | Usamos `campanhaBonus 300`. |
+| 4 | `promocaoAtual` | Guardava o número calculado por `pontosEmDobro 100`. | Esperava `Int -> Int`, mas recebeu `Int`; havia argumentos demais (GHC-83865). | Guardamos a própria função: `promocaoAtual = pontosEmDobro`. |
+
+As mensagens foram obtidas com GHC 9.10.3 no Haskell Playground. Corrigimos
+um erro por vez e recompilamos após cada alteração. O `main` e as duas funções
+marcadas como corretas foram preservados.
 
 ## Desafio 6 — Haskell × C
 

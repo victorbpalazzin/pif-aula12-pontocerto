@@ -14,20 +14,20 @@ pontosEmDobro :: Int -> Int
 pontosEmDobro = \p -> p * 2
 
 -- Aplica a mesma regra duas vezes seguidas sobre o valor.
-aplicaRegraDuasVezes :: Int -> Int -> Int
+aplicaRegraDuasVezes :: (Int -> Int) -> Int -> Int
 aplicaRegraDuasVezes regra valor = regra (regra valor)
 
 -- Fim de semana: pontos multiplicados por 4.
 fimDeSemana :: Int -> Int
-fimDeSemana = \p => p * 4
+fimDeSemana = \p -> p * 4
 
 -- Natal: bonus de 300 pontos.
 natal :: Int -> Int
-natal = campanhaBonus
+natal = campanhaBonus 300
 
 -- A promocao atual da loja e a de pontos em dobro.
 promocaoAtual :: Int -> Int
-promocaoAtual = pontosEmDobro 100
+promocaoAtual = pontosEmDobro
 
 main :: IO ()
 main = do
