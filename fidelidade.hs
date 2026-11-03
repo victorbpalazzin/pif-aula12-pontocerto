@@ -39,6 +39,8 @@ aniversarioCliente = campanhaBonus 200
 
 -- ---------- Desafio 4: campanhas acumuladas ----------
 
+acumula :: (Int -> Int) -> (Int -> Int) -> Int -> Int
+acumula primeira segunda valor = segunda (primeira valor)
 
 -- ---------- Testes (descomente conforme avancar) ----------
 -- Ao descomentar, apague "-- " (os dois tracos E o espaco).
@@ -64,6 +66,7 @@ main = do
   print (calculaPontos (campanhaMultiplicadora 4) 25)
   print (calculaPontos (campanhaBonus 30) 25)
   putStrLn "--- Desafio 4 ---"
-  -- print (acumula blackFriday aniversarioCliente 150)
-  -- print (acumula aniversarioCliente blackFriday 150)
+  print (acumula blackFriday aniversarioCliente 150)
+  print (acumula aniversarioCliente blackFriday 150)
   -- Semana do Cliente (escrevam a chamada aqui):
+  print (acumula (campanhaMultiplicadora 3) (\p -> p + 100) 60)

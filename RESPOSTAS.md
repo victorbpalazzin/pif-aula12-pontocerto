@@ -35,7 +35,14 @@ e executamos as regras com o compilador GHC.
 
 **a)** <!-- Por que as duas ordens dão resultados diferentes? -->
 
+Cada regra recebe o resultado da anterior. Primeiro multiplicar por 5 e depois
+somar 200 dá `150 * 5 + 200 = 950`. Inverter a ordem dá
+`(150 + 200) * 5 = 1750`, porque o bônus também é multiplicado.
+
 **b)** <!-- Qual ordem garante que o bônus de aniversário não seja multiplicado? Por quê? -->
+
+Primeiro `blackFriday` e depois `aniversarioCliente`. Assim, somente os pontos
+da compra são multiplicados; os 200 pontos de aniversário entram no final.
 
 ## Desafio 5 — revisão de código
 
